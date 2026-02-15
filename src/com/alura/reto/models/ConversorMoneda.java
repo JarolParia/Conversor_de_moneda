@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ConversorMoneda {
 
-    private static final String API_KEY = "123696d73d09fc4c91db64ce";
+    private static final String API_KEY = "";
 
     public Moneda obtenerTasa(String base, String destino){
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/"+ API_KEY +"/pair/"+
