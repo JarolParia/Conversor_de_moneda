@@ -36,7 +36,14 @@ public class Main {
                     *************************************************
                     """);
 
-            int opcion = teclado.nextInt();
+            int opcion;
+
+            try {
+                opcion = Integer.parseInt(teclado.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Debe ingresar un número válido.");
+                continue;
+            }
 
             String base = "";
             String destino = "";
@@ -96,7 +103,20 @@ public class Main {
 
             System.out.println("Ingrese la cantidad que desea convertir");
 
-            double cantidad = teclado.nextDouble();
+            double cantidad;
+
+            try {
+                cantidad = Double.parseDouble(teclado.nextLine());
+
+                if (cantidad <= 0) {
+                    System.out.println("La cantidad debe ser mayor que cero.");
+                    continue;
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("Debe ingresar un número válido.");
+                continue;
+            }
 
             Moneda moneda = conversor.obtenerTasa(base,destino);
 
